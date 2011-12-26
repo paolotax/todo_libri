@@ -1,0 +1,31 @@
+<header>
+  <a data-type="edit">Modifica</a>
+  <a data-type="destroy">Elimina</a>
+</header>
+
+<div class="content">
+  <label>
+    <span>Titolo</span>
+    <div><%= @titolo %></div>
+  </label>
+  
+  <label>
+    <span>Cm</span>
+    <div><%= @cm %></div>
+  </label>
+  
+  <label>
+    <span>Prezzo Copertina</span>
+    <div><%= @prezzo_copertina %></div>
+  </label>
+  
+  <label>
+    <span>Prezzo Consigliato</span>
+    <div><%= @prezzo_consigliato %></div>
+  </label>
+
+  <label>
+    <span>Settore</span>
+    <div><%= @settore_id %></div>
+  </label>
+</div>

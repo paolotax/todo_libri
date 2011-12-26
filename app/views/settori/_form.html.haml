@@ -1,0 +1,13 @@
+= form_for @settore do |f|
+  -if @settore.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@settore.errors.count, "error")} prohibited this settore from being saved:"
+      %ul
+        - @settore.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :nome
+    = f.text_field :nome
+  .actions
+    = f.submit 'Save'

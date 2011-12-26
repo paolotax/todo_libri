@@ -1,0 +1,29 @@
+<!-- / %h1 Listing settori
+/ 
+/ %table
+/   %tr
+/     %th Nome
+/     %th
+/     %th
+/     %th
+/ 
+/   - @settori.each do |settore|
+/     %tr
+/       %td= settore.nome
+/       %td= link_to 'Show', settore
+/       %td= link_to 'Edit', edit_settore_path(settore)
+/       %td= link_to 'Destroy', settore, :confirm => 'Are you sure?', :method => :delete
+/ 
+/ %br
+/ 
+/ = link_to 'New Settore', new_settore_path -->
+
+<div id="app"></div>
+
+<script type="text/javascript" charset="utf-8">
+    
+    jQuery(function(){
+      new App({el: $("#app")});
+    });
+
+</script>

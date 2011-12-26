@@ -1,0 +1,72 @@
+<h1>New Libro</h1>
+
+<a data-type="back">Back</a>
+
+<form>
+  
+  <label>
+    <span>Titolo</span>
+    <input 
+      type="text" name="titolo" 
+      value="<%= @titolo %>" required
+ autofocus>
+      <br />
+  </label>
+  
+  <label>
+    <span>Cm</span>
+    <input 
+      type="text" name="cm" 
+      value="<%= @cm %>" required
+>
+      <br />
+  </label>
+  
+  <label>
+    <span>Ean</span>
+    <input 
+      type="text" name="ean" 
+      value="<%= @ean %>" required
+>
+      <br />
+  </label>
+  
+  <label>
+    <span>Prezzo Copertina</span>
+    <input 
+      type="text" name="prezzo_copertina" 
+      value="<%= @prezzo_copertina %>" required
+>
+      <br />
+  </label>
+  
+  <label>
+    <span>Prezzo Consigliato</span>
+    <input 
+      type="text" name="prezzo_consigliato" 
+      value="<%= @prezzo_consigliato %>" required
+>
+      <br />
+  </label>
+  
+  <label>
+    <span>Settore</span>
+    <input 
+      type="text" name="settore_id" 
+      value="<%= @settore_id %>" required
+>
+      <br />
+  </label>
+  
+  <label>
+    <span>Coefficente</span>
+    <input 
+      type="text" name="coefficente" 
+      value="<%= @coefficente %>" required
+>
+      <br />
+  </label>
+  
+  <button>Create</button>
+
+</form>

@@ -1,0 +1,12 @@
+<h1>Listing Libri</h1>
+
+<% for libro in @libri: %>
+  <div class="item" data-id="<%= libro.id %>">
+    <a data-type="show"><%= libro.titolo %></a>
+    
+    <a data-type="edit">Edit</a> 
+    <a data-type="destroy">Destroy</a>
+  </div>
+<% end %>
+
+<p><a data-type="new">New Libro</a></p>

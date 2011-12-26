@@ -1,0 +1,18 @@
+<h1>Edit Settore</h1>
+
+<a data-type="back">Back</a>
+
+<form>
+  
+  <label>
+    <span>Nome</span>
+    <input 
+      type="text" name="nome" 
+      value="<%= @nome %>" required
+ autofocus>
+    <br />
+  </label>
+  
+  <button>Edit</button>
+
+</form>

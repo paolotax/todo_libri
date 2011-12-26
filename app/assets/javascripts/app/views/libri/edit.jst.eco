@@ -1,0 +1,72 @@
+<header>
+  <a data-type="save">Salva</a>
+  <a data-type="destroy">Elimina</a>
+</header>
+
+<div class="content">
+
+  <form>
+  
+    <label>
+      <span>Titolo</span>
+      <input 
+        type="text" name="titolo" 
+        value="<%= @titolo %>" required autofocus>
+      <br />
+    </label>
+  
+    <label>
+      <span>Cm</span>
+      <input 
+        type="text" name="cm" 
+        value="<%= @cm %>">
+      <br />
+    </label>
+  
+    <label>
+      <span>Ean</span>
+      <input 
+        type="text" name="ean" 
+        value="<%= @ean %>">
+      <br />
+    </label>
+  
+    <label>
+      <span>Prezzo Copertina</span>
+      <input 
+        type="text" name="prezzo_copertina" 
+        value="<%= @prezzo_copertina %>" required>
+      <br />
+    </label>
+  
+    <label>
+      <span>Prezzo Consigliato</span>
+      <input 
+        type="text" name="prezzo_consigliato" 
+        value="<%= @prezzo_consigliato %>" required>
+      <br />
+    </label>
+    
+    <label>
+      <span>Settore</span>
+      <select name="settore_id" 
+        value="" class="chzn">
+        <% for settore in App.Settore.all(): %>
+          <option value="<%= settore.id %>"><%= settore.nome %></option>
+        <% end %>
+      </select >
+    </label>
+  
+    <label>
+      <span>Coefficente</span>
+      <input 
+        type="text" name="coefficente" 
+        value="<%= @coefficente %>" required>
+      <br />
+    </label>
+  
+    <button>Salva</button>
+
+  </form>
+
+</div>

@@ -1,4 +1,4 @@
-<!-- / %h1 Listing settori
+/ %h1 Listing settori
 / 
 / %table
 /   %tr
@@ -16,14 +16,11 @@
 / 
 / %br
 / 
-/ = link_to 'New Settore', new_settore_path -->
+/ = link_to 'New Settore', new_settore_path
 
-<div id="app"></div>
+%div#app
 
-<script type="text/javascript" charset="utf-8">
-    
-    jQuery(function(){
-      new App({el: $("#app")});
-    });
-
-</script>
+:javascript
+  jQuery(function(){
+    new App({el: $("#app")});
+  });

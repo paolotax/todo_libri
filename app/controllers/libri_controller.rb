@@ -34,17 +34,11 @@ class LibriController < ApplicationController
   end
 
   def update
+    #raise params[:libro].inspect
+    
     @libro = Libro.find(params[:id])
-
-    respond_to do |format|
-      if @libro.update_attributes(params[:libro])
-        format.html { redirect_to @libro, notice: 'Libro was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @libro.errors, status: :unprocessable_entity }
-      end
-    end
+    @libro.update_attributes(params.except(:controller, :action))
+    respond_with @libro
   end
 
   def destroy

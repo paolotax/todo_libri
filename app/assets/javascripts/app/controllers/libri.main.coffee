@@ -7,6 +7,7 @@ class Show extends Spine.Controller
     'click [data-type=edit]': 'edit'
     'click [data-type=back]': 'back'
     'click [data-type=destroy]': 'destroy'
+    'click [data-type=settori]': 'settori'
 
   constructor: ->
     console.log 'show'
@@ -28,6 +29,10 @@ class Show extends Spine.Controller
       @item.destroy() 
       @navigate '/libri'
 
+  settori: -> 
+    console.log 'navigate settori'
+    @navigate '/settori'
+  
   back: ->
     @navigate '/libri'
 
@@ -39,6 +44,7 @@ class Edit extends Spine.Controller
     'click [data-type=save]':   'submit'
     'click [data-type=delete]': 'delete'
     'submit form':              'submit'
+    'click [data-type=url_giunti]': 'url_giunti'
     
   elements: 
     'form': 'form'  
@@ -46,14 +52,20 @@ class Edit extends Spine.Controller
   constructor: ->
     super
     
+    Libro.bind 'change', (libro) ->
+      unless libro.image.url is null
+        $('.content img').attr('src', "#{libro.image.url}").show()
+      else
+        $('.content img').hide()
+        
     @active @change
 
   change: (params) =>
     @item = Libro.find(params.id)
+    @item.remote_image_url = ""
+    @item.remove_image = false
     @render()
-    # $('select[name=type]').val @item.type
-    # $('select[name=materia_id]').val @item.id
-    # $('.chosen').chosen()
+    $('select[name=settore_nome]').val @item.settore_nome
 
   render: ->
     @html @view('libri/edit')(@item)
@@ -69,6 +81,9 @@ class Edit extends Spine.Controller
     @item.fromForm(@form).save()
     @navigate '/libri', @item.id
 
+  url_giunti: (e) ->
+    e.preventDefault()
+    $('input[name=remote_image_url]').val "http://catalogo.giunti.it/librig/#{ $('input[name=cm]').val()}.jpg"
 
 class Main extends Spine.Stack
   controllers:

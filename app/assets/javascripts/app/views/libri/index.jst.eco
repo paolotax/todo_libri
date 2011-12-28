@@ -1,3 +1,5 @@
+<div class= "settori"></div>
+
 <h1>Listing Libri</h1>
 
 <% for libro in @libri: %>

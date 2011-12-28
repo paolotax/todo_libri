@@ -83,6 +83,7 @@ class Index extends Spine.Controller
 
   constructor: ->
     super
+    console.log 'index'
     Settore.bind 'refresh change', @render
     Settore.fetch()
     

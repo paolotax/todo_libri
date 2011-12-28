@@ -1,5 +1,6 @@
 class App.Libro extends Spine.Model
-  @configure 'Libro', 'titolo', 'cm', 'ean', 'prezzo_copertina', 'prezzo_consigliato', 'settore_id', 'coefficente'
+  @configure 'Libro', 'titolo', 'cm', 'ean', 'prezzo_copertina', 'prezzo_consigliato', 
+    'settore_nome', 'coefficente', 'image', 'remote_image_url', 'materia_id', 'remove_image'
   @extend Spine.Model.Ajax
 
   @url: "/libri"

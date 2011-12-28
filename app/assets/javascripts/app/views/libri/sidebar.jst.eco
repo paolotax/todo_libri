@@ -1,3 +1,5 @@
+<div class= "settori"></div>
+
 <header>
   <input type="search" placeholder="cerca" results="0" incremental="true" autofocus>
 </header>

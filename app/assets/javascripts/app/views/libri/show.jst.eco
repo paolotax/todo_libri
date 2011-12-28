@@ -1,9 +1,11 @@
 <header>
   <a data-type="edit">Modifica</a>
   <a data-type="destroy">Elimina</a>
+  <a href="/settori">Settori</a>
 </header>
 
 <div class="content">
+  <img src="<%= @image.url %>"/>
   <label>
     <span>Titolo</span>
     <div><%= @titolo %></div>
@@ -26,6 +28,6 @@
 
   <label>
     <span>Settore</span>
-    <div><%= @settore_id %></div>
+    <div><%= @settore_nome %></div>
   </label>
 </div>

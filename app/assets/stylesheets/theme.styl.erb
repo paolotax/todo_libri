@@ -1,3 +1,5 @@
+@import './mixin'
+
 body {
   font-family: Helvetica, Arial, "MS Trebuchet", sans-serif;
   font-size: 16px;
@@ -118,6 +120,38 @@ textarea {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+select
+  -webkit-appearance: button;
+  -webkit-border-radius: 20px;
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none;
+  //  vbg-gradient(#e6e6e7, #fafafa)
+  background-image: url("<%= image_path('arrow-select.png') %>"), -webkit-gradient(linear, left top, left bottom, from(#e6e6e7), color-stop(0.3, #fafafa), to(#fafafa));
+  background-position: center right;
+  background-repeat: no-repeat;
+  border: 1px solid #9e9fa2;
+  color: #363636;
+  text-shadow: 0 1px 1px #ffffff;
+  font-size: 17px;
+  margin: 0;
+  margin-bottom 18px
+  padding: 4px 8px;
+  ellipsis();
+  outline: none
+
+  &:focus
+    border 1px solid #679AD3;
+    box-shadow(0, 0, 2px, 2px, #679AD3)
+
+textarea, 
+input[type="text"], 
+input[type="email"],
+input[type="password"]
+  &:focus
+    border 1px solid #679AD3;
+    box-shadow(0, 0, 2px, 2px, #679AD3)
 
 textarea, 
 input[type="text"], 

@@ -1,0 +1,4 @@
+<div class="item" data-id="<%= @id %>">
+  <%= @nome %>
+  <%- "<i>No titolo</i>" unless @nome %>                                          
+</div>

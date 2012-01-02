@@ -1,6 +1,5 @@
 <header>
-  <a data-type="save">Salva</a>
-  <a data-type="destroy">Elimina</a>
+  <a class="save">Salva</a>
 </header>
 
 <div class="content">
@@ -12,7 +11,7 @@
         <span>Titolo</span>
         <input 
           type="text" name="titolo" 
-          value="<%= @titolo %>" required autofocus>
+          value="<%= @titolo %>" required autofocus >
         <br />
       </label>
     </div>
@@ -22,7 +21,8 @@
         <label>
           <span>Settore</span>
           <select name="settore_nome" 
-            value="<%= @settore_nome %>" class="chzn">
+            value="<%= @settore_nome %>" class="chzn" required>
+            <option value >Seleziona il settore...</option>
             <% for settore in App.Settore.all(): %>
               <option value="<%= settore.nome %>"><%= settore.nome %></option>
             <% end %>

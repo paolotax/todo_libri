@@ -8,8 +8,7 @@
     <span>Nome</span>
     <input 
       type="text" name="nome" 
-      value="<%= @nome %>" required
- autofocus>
+      value="<%= @nome %>" required autofocus>
       <br />
   </label>
   

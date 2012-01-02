@@ -5,7 +5,7 @@
 </header>
 
 <div class="content">
-  <img src="<%= @image.url %>"/>
+  <!-- <img src="<%= # @image.url %>"/> -->
   <label>
     <span>Titolo</span>
     <div><%= @titolo %></div>

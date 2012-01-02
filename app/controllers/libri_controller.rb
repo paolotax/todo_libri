@@ -21,16 +21,8 @@ class LibriController < ApplicationController
   end
 
   def create
-    @libro = Libro.new(params[:libro])
-    respond_to do |format|
-      if @libro.save
-        format.html { redirect_to @libro, notice: 'Libro was successfully created.' }
-        format.json { render json: @libro, status: :created, location: @libro }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @libro.errors, status: :unprocessable_entity }
-      end
-    end
+    @libro = Libro.new(params.except(:controller, :action))
+    @libro.save
   end
 
   def update

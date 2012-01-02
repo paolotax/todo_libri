@@ -29,10 +29,19 @@ class Sidebar extends Spine.Controller
     Libro.bind 'refresh', (e) =>
       @el.removeClass('loading')
       @render(arguments...)
+      
+    Libro.bind 'save', (item) =>
+      unless $(".item[data-id='#{item.id}']").length
+        $('.nuovo_libro').replaceWith @view('libri/item')(item)
+      
+    Libro.bind 'create', (item) =>
+      @items.prepend @view('libri/item')(item)
+      $(".item[data-id='#{item.id}']").addClass 'nuovo_libro'
 
     Libro.bind 'change', (item) => 
-      it = $(".item[data-id='#{item.id}']")
-      it.replaceWith(@view('libri/item')(item))
+      unless $('.nuovo_libro').length
+        it = $(".item[data-id='#{item.id}']")
+        it.replaceWith(@view('libri/item')(item))
 
        
   filter: (e) ->
@@ -57,6 +66,9 @@ class Sidebar extends Spine.Controller
   edit: (e) ->
     item = $(e.target).item()
     @navigate '/libri', item.id, 'edit'
+  
+  create: ->
+    @navigate('/libri/new')
 
 
 window.Sidebar = Sidebar

@@ -18,8 +18,10 @@ class App.Libri extends Spine.Controller
     @main    = new Main
      
     @routes
-      'libri': (params) ->
-        @sidebar.active(params)
+
+      '/libri/new': (params) ->
+        @sidebar.active(params) 
+        @main.new.active(params)
       
       '/libri/:id': (params) ->
         @sidebar.active(params)
@@ -28,7 +30,23 @@ class App.Libri extends Spine.Controller
       '/libri/:id/edit': (params) -> 
         @sidebar.active(params)
         @main.edit.active(params)
+
+      '/libri': (params) ->
+        @sidebar.active(params)    
     
+    Libro.bind "destroy", (rec) ->
+      console.log rec.id
+      $(".item[data-id=#{rec.id}]").remove()
+      
+    Libro.bind "error", (rec, msg) ->
+      for error in msg.errors
+        $("input[name=#{error}], select[name=#{error}]").addClass 'validation_error'
+        $("input[name=#{error}]").attr 'placeholder', msg[error]
+    
+    $('input[required], select[required]').live 'change', ->
+      console.log 'gino'
+      $(@).removeClass('validation_error')
+      
     divide = $('<div />').addClass('vdivide')
 
     @append @sidebar , divide, @main

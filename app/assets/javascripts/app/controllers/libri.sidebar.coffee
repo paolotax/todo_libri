@@ -20,6 +20,7 @@ class Sidebar extends Spine.Controller
     'click footer button': 'create'
 
   constructor: ->
+    console.log 'sidebar'
     super
     @html @view('libri/sidebar')()    
 

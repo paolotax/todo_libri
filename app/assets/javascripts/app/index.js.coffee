@@ -17,25 +17,13 @@
 class App extends Spine.Controller
   constructor: ->
     super
-    
-    console.log @el.context
-    # @libri = new App.Libri
-    @settori = new App.Settori
-    
-    # @append @libri
-    # @append @settori
-    
-    # @routes
-    #   '/settori': -> console.log 'settoriiii'
-    #   '/libri':   -> console.log 'libriii'
-    
+    @settori = new App.Settori    
+    @libri = new App.Libri
     
     if @el.context.URL.match /settori/
-      console.log 'settori'
       @append @settori
     else
-      console.log 'libri'
-      # @append @libri
+      @append @libri
 
     Spine.Route.setup()    
 
